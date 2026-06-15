@@ -1,27 +1,63 @@
 # Shadow Engine 2D
 
-A professional 2D game base project built with **C++17** and **SDL2**.
+A 2D game framework developed in **C++17** using **SDL2**, created as a personal learning project to explore game engine architecture, rendering systems, platformer physics, animation pipelines, and software design patterns.
+
+---
+
+## About The Project
+
+Shadow Engine 2D is a reusable foundation for developing 2D platformer games.
+
+The project was built to practice:
+
+* Object-Oriented Programming (OOP)
+* Game Loop Architecture
+* State Machine Design
+* Resource Management
+* Collision Detection
+* Camera Systems
+* Animation Systems
+* Platformer Physics
+* SDL2 Development
+* Software Engineering Principles
+
+The goal is not only to create a playable game but also to understand how a small-scale game engine is structured internally.
+
+---
+
+## Technologies
+
+* C++17
+* SDL2
+* SDL2_image
+* SDL2_ttf
+* SDL2_mixer
+* MinGW
+* Makefile Build System
+
+---
 
 ## Project Structure
 
-```
+```text
 game2D/
-├── include/              # Header files
-│   ├── Animation.h       # Sprite animation system
-│   ├── Camera.h          # Camera with smooth follow & shake
-│   ├── Constants.h       # Game configuration
-│   ├── Game.h            # Main game class
-│   ├── GameObject.h      # Base entity class
-│   ├── InputManager.h    # Keyboard & mouse input
-│   ├── Player.h          # Player with platformer physics
-│   ├── TextureManager.h  # Texture loading & caching
-│   ├── TileMap.h         # Tile-based level system
-│   ├── Timer.h           # Delta time & FPS
-│   └── Vector2D.h        # 2D math vector
-├── src/                  # Source files
-│   ├── main.cpp          # Entry point
-│   ├── Game.cpp          # Game loop & rendering
-│   ├── Timer.cpp         # Frame timing
+├── include/
+│   ├── Animation.h
+│   ├── Camera.h
+│   ├── Constants.h
+│   ├── Game.h
+│   ├── GameObject.h
+│   ├── InputManager.h
+│   ├── Player.h
+│   ├── TextureManager.h
+│   ├── TileMap.h
+│   ├── Timer.h
+│   └── Vector2D.h
+│
+├── src/
+│   ├── main.cpp
+│   ├── Game.cpp
+│   ├── Timer.cpp
 │   ├── TextureManager.cpp
 │   ├── InputManager.cpp
 │   ├── Animation.cpp
@@ -29,51 +65,197 @@ game2D/
 │   ├── GameObject.cpp
 │   ├── Player.cpp
 │   └── TileMap.cpp
-├── assets/               # Game resources
+│
+├── assets/
 │   ├── textures/
-│   ├── fonts/
 │   ├── audio/
+│   ├── fonts/
 │   └── maps/
-├── Makefile
+│
 ├── build.bat
+├── Makefile
 └── README.md
 ```
 
-## Features
+---
 
-- **Game State Machine** - Menu, Playing, Paused, Game Over
-- **Platformer Physics** - Gravity, friction, coyote time, jump buffering
-- **Camera System** - Smooth lerp follow, screen shake, zoom
-- **Tile Map** - File loading, collision detection, frustum culling
-- **Animation System** - Named states, sprite sheet support
-- **Input Manager** - Press/release detection, mouse support
-- **Texture Manager** - Singleton cache, sprite sheet rendering
+## Core Features
+
+### Game State Machine
+
+Supports multiple game states:
+
+* Main Menu
+* Playing
+* Pause
+* Game Over
+
+This structure makes the project easier to scale and maintain.
+
+---
+
+### Platformer Physics
+
+Implemented mechanics include:
+
+* Gravity
+* Friction
+* Acceleration
+* Velocity
+* Jump Buffering
+* Coyote Time
+
+These features help create responsive and enjoyable movement.
+
+---
+
+### Camera System
+
+Features:
+
+* Smooth Follow
+* Lerp Movement
+* Camera Shake
+* Zoom Support
+
+---
+
+### Tile Map System
+
+Supports:
+
+* Tile-based level design
+* Collision detection
+* Map loading
+* Frustum culling
+
+---
+
+### Animation System
+
+Features:
+
+* Sprite Sheet Animation
+* Named Animation States
+* Frame Timing Control
+* State Switching
+
+---
+
+### Resource Management
+
+TextureManager provides:
+
+* Centralized texture loading
+* Resource caching
+* Reduced memory usage
+
+---
+
+### Input Management
+
+Handles:
+
+* Keyboard Input
+* Mouse Input
+* Press / Hold / Release Detection
+
+---
 
 ## Controls
 
-| Key | Action |
-|-----|--------|
-| A/D, ←/→ | Move left/right |
-| Space, W, ↑ | Jump |
-| ESC | Pause / Quit |
-| Enter | Start game |
-| F1 | Toggle debug mode |
+| Key           | Action            |
+| ------------- | ----------------- |
+| A / D         | Move Left / Right |
+| ← / →         | Move Left / Right |
+| W / ↑ / Space | Jump              |
+| ESC           | Pause / Quit      |
+| Enter         | Start Game        |
+| F1            | Debug Mode        |
 
-## Build
+---
+
+## Build Instructions
+
+### Windows (MinGW)
 
 ```bash
-# Using build script
-build.bat
-
-# Using Makefile (with MinGW make)
 mingw32-make
+```
 
-# Run
+or
+
+```bash
+build.bat
+```
+
+### Run
+
+```bash
 game2d.exe
 ```
 
-## Adding Your Own Assets
+---
 
-1. Place sprite sheets in `assets/textures/`
-2. Load them via `TextureManager::loadTexture("id", "path", renderer)`
-3. Use `drawFrame()` for animated sprites
+## Learning Objectives
+
+This project was developed to gain practical experience in:
+
+* Game Programming
+* Engine Architecture
+* Data Structures
+* Memory Management
+* Design Patterns
+* Software Development Workflow
+* Git & GitHub Collaboration
+
+---
+
+## Third-Party Assets
+
+This project uses third-party assets for educational purposes.
+
+Credits to their respective creators.
+
+### Graphics & Animations
+
+* Author: [AUTHOR NAME]
+* Source: [ITCH.IO LINK]
+
+Usage follows the license terms provided by the original creator.
+
+---
+
+## AI Assistance Disclosure
+
+Artificial Intelligence tools were used during the development process as learning and productivity aids.
+
+Examples include:
+
+* Code explanation
+* Debugging assistance
+* Documentation writing
+* Architecture discussions
+* Refactoring suggestions
+
+All design decisions, implementation choices, testing, and final integration were performed by the project author.
+
+---
+
+## Author
+
+**Hồ Văn Duy**
+
+* Information Technology Student
+* University of Da Nang
+* GitHub: https://github.com/ho-van-duy
+
+---
+
+## License
+
+This repository is published for educational and portfolio purposes.
+
+Source code belongs to the project author.
+
+Third-party assets remain the property of their respective creators and are subject to their own licenses.
